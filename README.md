@@ -43,7 +43,7 @@ hardware uses directly:
 
 The build is reproducible: built from the original `Data.bin` **without** a license file, the image
 is byte-identical for everyone —
-`SonicNexus-PS1.bin` SHA-256 `5d8ea38e0967ce0646f5980d9b8af2cd9a68e7e7896d4495987b135bf24590b6`.
+`SonicNexus-PS1.bin` SHA-256 `25e33f8053ef15f2513254c865a492a628e7f9484b81e531e624df9222e3e3d4`.
 (With a license file the license sectors differ, so the hash does too.)
 
 Before writing it, the builder verifies the image byte by byte: sector headers, EDC/ECC of every
@@ -62,8 +62,8 @@ sector, the license sectors, and every file against its source.
 
 - No saving: Sonic Nexus itself has nothing to save (no memory card use).
 - No dev menu / settings file / mods from the PC version.
-- Tested in emulators only (PCSX-Redux, including boot through a retail NTSC-U BIOS); not yet on
-  a real console.
+- Tested in emulators only (PCSX-Redux; DuckStation with a retail PSone BIOS), not yet on a real
+  console. The executable carries the real-hardware fixes found by testing the Sonic CD port on a PSone.
 
 ## Compromises to make this work
 
