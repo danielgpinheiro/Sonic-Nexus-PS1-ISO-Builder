@@ -43,7 +43,7 @@ hardware uses directly:
 
 The build is reproducible: built from the original `Data.bin` **without** a license file, the image
 is byte-identical for everyone —
-`SonicNexus-PS1.bin` SHA-256 `25e33f8053ef15f2513254c865a492a628e7f9484b81e531e624df9222e3e3d4`.
+`SonicNexus-PS1.bin` SHA-256 `cc741fb4c1735c86f03614b8bb25528c5a9743e8c555d646c96b7c1310d5a318`.
 (With a license file the license sectors differ, so the hash does too.)
 
 Before writing it, the builder verifies the image byte by byte: sector headers, EDC/ECC of every

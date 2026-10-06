@@ -3,8 +3,9 @@
 The PlayStation executable (PS-X EXE, 208896 bytes) that `build_iso.py` puts on the disc as
 `PSX.EXE`: Retro Engine v2 (RSDKv2 decompilation) ported to the PS1 with psyqo.
 
-- Built from the RSDKv2-ps1 port at commit `6feee50` (2026-09-25), natural boot, retail 2 MB RAM.
-- SHA-256 `fbcdd7ac548ac7e4f10c1d10d253861e1ef13477439f80f75b5c7cff6601e2ce` (also in `SHA256SUMS`).
+- Built from the RSDKv2-ps1 port at commit `daa4c66` (2026-10-06; psyqo from nugget `05b9bc30`: VRAM cleared at
+  boot), natural boot, retail 2 MB RAM.
+- SHA-256 `42c43854f909672577a2452559691deee2d476cdde3fda0dd7a5db236a76513d` (also in `SHA256SUMS`).
 - It reads the converted assets from the disc (`Data/...`); the converters in `../builder/` must
   match this executable's formats, so use the builder from the same release.
 - Real-hardware fixes, found by testing the Sonic CD port on a PSone (SCPH-101):
