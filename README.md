@@ -43,7 +43,7 @@ hardware uses directly:
 
 The build is reproducible: built from the original `Data.bin` **without** a license file, the image
 is byte-identical for everyone —
-`SonicNexus-PS1.bin` SHA-256 `dcfc7db6e8d4352242f135132e5ae108352e88bd96e1c8a6d59b139fee578aff`.
+`SonicNexus-PS1.bin` SHA-256 `473f35232dd50480699e139a61b1ed362de3b1f2b9285d61f1a7f386c564da68`.
 (With a license file the license sectors differ, so the hash does too.)
 
 Before writing it, the builder verifies the image byte by byte: sector headers, EDC/ECC of every
@@ -51,8 +51,8 @@ sector, the license sectors, and every file against its source.
 
 ## What's new
 
-Every update is listed in [CHANGELOG.md](CHANGELOG.md). Latest (October 2026): the disc's executable is now named
-`NEXUS.EXE` instead of `PSX.EXE`.
+Every update is listed in [CHANGELOG.md](CHANGELOG.md). Latest (October 2026): a memory safety fix (the
+game's stack now has its own area, so loads can no longer run into it).
 
 ## What the PS1 version can do
 

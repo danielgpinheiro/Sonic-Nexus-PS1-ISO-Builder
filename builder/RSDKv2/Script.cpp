@@ -1330,12 +1330,19 @@ void ClearScriptData() {
     }
 }
 
+#if PS1_PROFILE
+volatile uint32_t g_ps1VmOps = 0; // script VM instructions executed (regression work counter, make PROFILE=1)
+#endif
+
 void ProcessScript(int scriptCodePtr, int jumpTablePtr, byte scriptSub) {
     bool running      = true;
     int scriptDataPtr = scriptCodePtr;
     JumpTableStackPos = 0;
     while (running) {
         int opcode = ScriptData[scriptDataPtr++];
+#if PS1_PROFILE
+        g_ps1VmOps = g_ps1VmOps + 1;
+#endif
         if (opcode < 0 || opcode >= (int)(sizeof(functions) / sizeof(functions[0]))) {
             // Corrupt opcode (scriptDataPtr drifted out of the bytecode) — stop the
             // script rather than reading functions[opcode] out of bounds.
