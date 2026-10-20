@@ -3,6 +3,21 @@
 Updates to the Sonic Nexus PS1 ISO Builder, newest first. To get an update, rebuild your disc image with the new
 version of the builder (same steps as in the [README](README.md)).
 
+## Flip-bit tiles and sprites on newer consoles, Sonic facing left at his size (October 2026)
+
+- **On consoles with the newer GPU (every PSone, most later PlayStations), mirrored level tiles and mirrored sprites
+  are now drawn with the GPU's own flip feature** instead of as textured four-corner shapes, which costs the GPU less.
+  The game checks the GPU at start-up (nocash's GPU detection, then a tiny test drawing read back from video memory):
+  on the earliest consoles, whose GPU lacks the feature, and on emulators that don't draw it, everything is drawn as
+  before. The picture is the same either way (checked frame by frame in the DuckStation preview build, which draws
+  the feature, against the old way of drawing). Not yet tested on a console.
+- **Sonic facing left on flat ground is drawn at his real size:** he was drawn 4 pixels wider than facing right, and
+  his frame started one column too far (a texel from beyond the frame). He is now the exact mirror of facing right, as
+  on the PC version; mirrored sprites drawn at their own size are exact too.
+- The title screen shows the new build, `v 9d773415` (the RSDKv2-ps1 port's commit `9d77341`).
+- Checked with the port's automated tests in PCSX-Redux and DuckStation. The image's SHA-256 changes (the new value is
+  in the README's Output section).
+
 ## Build stamp on the title screen (October 2026)
 
 - **The title screen shows which build you are playing:** a small grey line in its bottom-left corner, e.g.
