@@ -43,7 +43,7 @@ hardware uses directly:
 
 The build is reproducible: built from the original `Data.bin` **without** a license file, the image
 is byte-identical for everyone —
-`SonicNexus-PS1.bin` SHA-256 `927d17ca0c3c2f8d4a09c579f112ac8274c3cbd8cc6dd4cb90ede7ec1621c6ea`.
+`SonicNexus-PS1.bin` SHA-256 `7f2781e78dd95233ba3b4540434d95ec11c8fd8e8b6a95c1c125013caa26ea60`.
 (With a license file the license sectors differ, so the hash does too.)
 
 Before writing it, the builder verifies the image byte by byte: sector headers, EDC/ECC of every
@@ -51,9 +51,8 @@ sector, the license sectors, and every file against its source.
 
 ## What's new
 
-Every update is listed in [CHANGELOG.md](CHANGELOG.md). Latest (October 2026): mirrored tiles and sprites use the GPU's flip feature on consoles that have it
-(checked at start-up; the earliest consoles draw as before), and Sonic facing left on flat ground is drawn at his
-exact size, build `v 9d773415`.
+Every update is listed in [CHANGELOG.md](CHANGELOG.md). Latest (October 2026): the loading icon waits while a level
+load copies graphics to video memory, a protection against a freeze found in the Sonic 1 port, build `v fb5acab4`.
 
 ## What the PS1 version can do
 
